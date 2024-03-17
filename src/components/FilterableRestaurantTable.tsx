@@ -19,6 +19,7 @@ function FilterableRestaurantTable() {
   return (
     <div>
       <SearchBar
+        categories={categories}
         filterText={filterText}
         setFilterText={setFilterText}
         setFilterCategory={setFilterCategory}
