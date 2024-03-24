@@ -8,6 +8,7 @@ export interface FetchReturn<T> {
 
 function useFetch<T>(url: string, option?: RequestInit): FetchReturn<T> {
   // 빈 객체({})를 T 타입으로 강제 변환
+  // as를 사용해도 되는걸까?
   const [data, setData] = useState<T>({} as T);
   const [isError, setIsError] = useState<boolean>(false);
 

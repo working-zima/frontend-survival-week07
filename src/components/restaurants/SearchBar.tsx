@@ -13,8 +13,14 @@ function SearchBar({
 }: SearchBarProps) {
   return (
     <div>
-      <FilterTextField />
-      <Categories categories={categories} />
+      <FilterTextField
+        filterText={filterText}
+        setFilterText={setFilterText}
+      />
+      <Categories
+        categories={categories}
+        setFilterCategory={setFilterCategory}
+      />
     </div>
   );
 }

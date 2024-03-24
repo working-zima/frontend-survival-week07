@@ -1,15 +1,16 @@
-import Food from '../types/Food';
+import Food from '../../types/Food';
 
 type MenuItem = {
   food: Food;
+  onClickItem: (food:Food) => void;
 }
 
-function MenuItem({ food }: MenuItem) {
+function MenuItem({ food, onClickItem }: MenuItem) {
   const { name, price } = food;
 
   return (
     <div>
-      <button type="button">
+      <button type="button" onClick={() => onClickItem(food)}>
         <span>
           {name}
           {' '}

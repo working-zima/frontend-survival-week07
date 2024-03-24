@@ -1,5 +1,6 @@
-import Layout from './components/Layout';
+import Layout from './components/restaurants/Layout';
 import IntroPage from './pages/IntroPage';
+import OrderCompletePage from './pages/OrderCompletePage';
 import OrderPage from './pages/OrderPage';
 
 const routes = [
@@ -8,6 +9,7 @@ const routes = [
     children: [
       { path: '/', element: <IntroPage /> },
       { path: '/order', element: <OrderPage /> },
+      { Path: '/order/complede', element: <OrderCompletePage /> },
     ],
   },
 ];
