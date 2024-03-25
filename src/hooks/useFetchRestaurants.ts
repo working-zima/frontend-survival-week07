@@ -9,8 +9,9 @@ export default function useFetchRestaurants(): Restaurant[] {
   useEffect(() => {
     async function fetchData(): Promise<void> {
       try {
-        const response = await get<any>('localhost:3000', 'restaurants');
+        const response = await get<{ restaurants: Restaurant[] }>('localhost:3000', 'restaurants');
         const restaurants = response?.restaurants ?? [];
+
         setData(restaurants);
       } catch (error) {
         setData([]);

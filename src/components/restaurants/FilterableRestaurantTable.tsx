@@ -1,7 +1,5 @@
 import { useState } from 'react';
 
-// import Restaurant from '../../types/Restaurant';
-// import useFetch from '../../hooks/useFetch';
 import SearchBar from './SearchBar';
 import RestaurantTable from './RestaurantTable';
 import extractCategories from '../../utils/extractCategories';
@@ -12,13 +10,10 @@ function FilterableRestaurantTable() {
   const [filterText, setFilterText] = useState<string>('');
   const [filterCategory, setFilterCategory] = useState<string>('전체');
 
-  // const {
-  //   data: { restaurants = [] },
-  // } = useFetch<{restaurants: Restaurant[]}>('http://localhost:3000/restaurants');
+  const restaurants = useFetchRestaurants();
 
-  // const filteredRestaurants = filterRestaurants(restaurants, { filterText, filterCategory });
+  const filteredRestaurants = filterRestaurants(restaurants, { filterText, filterCategory });
 
-  const restaurants = useFetchRestaurants(); // 수정
   const categories = extractCategories(restaurants);
 
   return (
@@ -30,7 +25,7 @@ function FilterableRestaurantTable() {
         setFilterCategory={setFilterCategory}
       />
       <RestaurantTable
-        restaurants={restaurants}
+        restaurants={filteredRestaurants}
       />
     </div>
   );
