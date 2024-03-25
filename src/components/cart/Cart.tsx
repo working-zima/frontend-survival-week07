@@ -1,9 +1,9 @@
 import { useNavigate } from 'react-router';
 
-import useFetch from '../../hooks/useFetch';
 import useCartStore from '../../hooks/useCartStore';
 import CartItem from './CartItem';
 import Summary from './Summary';
+import useFetchCreateOrder from '../../hooks/useFetchCreateOrder';
 
 function Cart() {
   const navigate = useNavigate();
@@ -19,14 +19,15 @@ function Cart() {
     navigate('/');
   };
 
-  const handelClickOrder = () => {
-    const {
-      data: { orderId = '' },
-    } = useFetch<{orderId: string}>('http://localhost:3000/oders');
+  const handelClickOrder = async () => {
+    if (!menu.length) {
+      return;
+    }
+    const id = await useFetchCreateOrder(menu);
 
     store.clear();
-
-    navigate(`/order/complete?orderId=${orderId}`);
+    console.log(id);
+    navigate(`/order/complete?orderId=${id}`);
   };
 
   return (
