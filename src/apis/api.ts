@@ -9,7 +9,9 @@ export async function get<T>(host: string, path: string): Promise<T> {
     throw new Error(`Failed to fetch data from ${url}`);
   }
 
-  return response.json();
+  const data = await response.json();
+
+  return data;
 }
 
 export async function post<T, U>(host: string, path: string, body:T, options?: RequestInit)

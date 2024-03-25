@@ -16,15 +16,10 @@ function FilterableRestaurantTable() {
   //   data: { restaurants = [] },
   // } = useFetch<{restaurants: Restaurant[]}>('http://localhost:3000/restaurants');
 
-  const { restaurants = [], isError } = useFetchRestaurants(); // 수정
-
-  if (isError) {
-    return <div>Error fetching data...</div>;
-  }
-  console.log(restaurants);
-  const categories = extractCategories(restaurants);
-
   // const filteredRestaurants = filterRestaurants(restaurants, { filterText, filterCategory });
+
+  const restaurants = useFetchRestaurants(); // 수정
+  const categories = extractCategories(restaurants);
 
   return (
     <div>
