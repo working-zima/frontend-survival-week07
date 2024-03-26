@@ -1,9 +1,27 @@
-import React from 'react';
+import { useSearchParams } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 
-function OrderCompletePage() {
+import Order from '../components/order/Order';
+
+export default function OrderCompletePage() {
+  const navigate = useNavigate();
+
+  const [readSearchParams] = useSearchParams();
+  const orderId = readSearchParams.get('orderId');
+
+  if (!orderId) {
+    navigate('/');
+    return null;
+  }
+
+  const handleClickBack = () => {
+    navigate('/');
+  };
+
   return (
-    <div>OrderCompletePage</div>
+    <Order
+      orderId={orderId}
+      handleClickBack={handleClickBack}
+    />
   );
 }
-
-export default OrderCompletePage;

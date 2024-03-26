@@ -26,7 +26,7 @@ function Cart() {
     const id = await useFetchCreateOrder(menu);
 
     store.clear();
-    console.log(id);
+
     navigate(`/order/complete?orderId=${id}`);
   };
 

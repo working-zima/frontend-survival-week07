@@ -1,7 +1,9 @@
-import Layout from './components/restaurants/Layout';
+import 'reflect-metadata';
+
+import Layout from './components/Layout';
 import IntroPage from './pages/IntroPage';
-import OrderCompletePage from './pages/OrderCompletePage';
 import OrderPage from './pages/OrderPage';
+import OrderCompletePage from './pages/OrderCompletePage';
 
 const routes = [
   {
@@ -9,7 +11,7 @@ const routes = [
     children: [
       { path: '/', element: <IntroPage /> },
       { path: '/order', element: <OrderPage /> },
-      { Path: '/order/complede', element: <OrderCompletePage /> },
+      { path: '/order/complete', element: <OrderCompletePage /> },
     ],
   },
 ];
