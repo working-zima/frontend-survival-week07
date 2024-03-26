@@ -23,7 +23,7 @@ function Summary({ selectedMenu }: SummaryProps) {
       <div>
         총 결제 예상금액
         {' '}
-        {totalPrice}
+        {totalPrice.toLocaleString()}
         원
       </div>
     </div>

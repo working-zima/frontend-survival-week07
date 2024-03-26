@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import React, { useRef } from 'react';
 
 type TextFieldProps = {
   label: string;
@@ -7,7 +7,7 @@ type TextFieldProps = {
   setFilterText: (text: string) => void;
 }
 
-function TextField({
+export default function TextField({
   label, placeholder, filterText, setFilterText,
 } : TextFieldProps) {
   const id = useRef(`input-${Math.random()}`);
@@ -20,7 +20,9 @@ function TextField({
 
   return (
     <div>
-      <label htmlFor={id.current}>{label}</label>
+      <label htmlFor={id.current}>
+        {label}
+      </label>
       <input
         id={id.current}
         type="text"
@@ -31,5 +33,3 @@ function TextField({
     </div>
   );
 }
-
-export default TextField;

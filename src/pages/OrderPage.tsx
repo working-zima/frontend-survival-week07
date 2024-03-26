@@ -1,5 +1,5 @@
 import FilterableRestaurantTable from '../components/restaurants/FilterableRestaurantTable';
-import Cart from '../components/cart/Cart';
+import Cart from '../components/cart';
 
 function OrderPage() {
   return (

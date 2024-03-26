@@ -1,5 +1,3 @@
-import _ from 'lodash';
-
 import Order from '../../types/Order';
 
 type MessageProps = {

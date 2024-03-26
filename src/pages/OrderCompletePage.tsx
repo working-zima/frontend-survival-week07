@@ -1,7 +1,7 @@
 import { useSearchParams } from 'react-router-dom';
 import { useNavigate } from 'react-router';
 
-import Order from '../components/order/Order';
+import Order from '../components/order';
 
 export default function OrderCompletePage() {
   const navigate = useNavigate();

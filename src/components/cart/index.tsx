@@ -4,6 +4,7 @@ import useCartStore from '../../hooks/useCartStore';
 import CartItem from './CartItem';
 import Summary from './Summary';
 import useFetchCreateOrder from '../../hooks/useFetchCreateOrder';
+import OperationButtons from './OperationButtons';
 
 function Cart() {
   const navigate = useNavigate();
@@ -47,14 +48,10 @@ function Cart() {
           );
         })}
       </ul>
-      <div>
-        <button type="button" onClick={handleClickCancel}>
-          취소
-        </button>
-        <button type="button" onClick={handelClickOrder}>
-          주문하기
-        </button>
-      </div>
+      <OperationButtons
+        handleClickCancel={handleClickCancel}
+        handelClickOrder={handelClickOrder}
+      />
     </div>
   );
 }
